@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cil1lpuawt3uj"
-path="res://.godot/imported/walk.png-9e2b3f0687548f2d45a4214880a644d7.ctex"
+uid="uid://qlser4ps1gc"
+path="res://.godot/imported/DinoSprites - vita.png-da7967a7fc78cc69179de7e267e24dcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://walk.png"
-dest_files=["res://.godot/imported/walk.png-9e2b3f0687548f2d45a4214880a644d7.ctex"]
+source_file="res://DinoSprites - vita.png"
+dest_files=["res://.godot/imported/DinoSprites - vita.png-da7967a7fc78cc69179de7e267e24dcc.ctex"]
 
 [params]
 
