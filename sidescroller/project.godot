@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Sidescroller"
+run/main_scene="uid://d4dgat5ubn5p2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=620
+window/size/viewport_height=360
+window/size/mode=3
+window/stretch/mode="viewport"
+
 [rendering]
 
-renderer/rendering_method="forward_plus"
+textures/canvas_textures/default_texture_filter=0
