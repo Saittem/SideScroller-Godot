@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://bd1dafn35gmda"]
+[gd_scene load_steps=26 format=3 uid="uid://bd1dafn35gmda"]
 
 [ext_resource type="Texture2D" uid="uid://qlser4ps1gc" path="res://DinoSprites - vita.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dekjt5ns42h2q" path="res://player.gd" id="1_i3pqv"]
 [ext_resource type="AudioStream" uid="uid://dhcgr01afw1ir" path="res://jumo_sound_effect.mp3" id="2_onrkg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
@@ -171,9 +172,10 @@ size = Vector2(42, 75)
 size = Vector2(42, 85)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_i3pqv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_nvl01")
 animation = &"duck"
 autoplay = "idle"
@@ -189,5 +191,5 @@ visible = false
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_onrkg")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="JumpSoundEffect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_onrkg")
