@@ -177,19 +177,17 @@ script = ExtResource("1_i3pqv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_nvl01")
-animation = &"duck"
+animation = &"walk"
 autoplay = "idle"
-frame_progress = 0.683546
 
 [node name="CrounchCol" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_4flbx")
 
 [node name="WalkCol" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="JumpSoundEffect" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_onrkg")
+volume_db = -5.0
