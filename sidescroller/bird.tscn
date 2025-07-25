@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://d503kjbo7uwd"]
+
+[ext_resource type="Texture2D" uid="uid://bqcqed5ykrgnw" path="res://BirdSprite.png" id="1_g5k2s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crnqq"]
+atlas = ExtResource("1_g5k2s")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j88tq"]
+atlas = ExtResource("1_g5k2s")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cchwj"]
+atlas = ExtResource("1_g5k2s")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ljjq"]
+atlas = ExtResource("1_g5k2s")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axl6x"]
+atlas = ExtResource("1_g5k2s")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr30m"]
+atlas = ExtResource("1_g5k2s")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o5yp"]
+atlas = ExtResource("1_g5k2s")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3v35"]
+atlas = ExtResource("1_g5k2s")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6nk3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crnqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j88tq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cchwj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ljjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axl6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr30m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o5yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3v35")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w265n"]
+size = Vector2(16, 14)
+
+[node name="Bird" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6nk3w")
+animation = &"fly"
+autoplay = "fly"
+frame_progress = 0.175137
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_w265n")
