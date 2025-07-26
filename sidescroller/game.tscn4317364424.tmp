@@ -14,5 +14,3 @@ script = ExtResource("1_fc0e3")
 position = Vector2(82, 318)
 
 [node name="Ground" parent="." instance=ExtResource("3_feb5d")]
-
-[node name="Camera2D" type="Camera2D" parent="."]

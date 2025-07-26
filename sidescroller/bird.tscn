@@ -67,7 +67,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w265n"]
-size = Vector2(16, 14)
+size = Vector2(16, 10)
 
 [node name="Bird" type="Area2D"]
 
