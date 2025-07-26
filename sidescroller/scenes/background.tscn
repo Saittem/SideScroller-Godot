@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://by825hfn26ecn"]
 
-[ext_resource type="Texture2D" uid="uid://cr3vpne4c8n1u" path="res://1.png" id="1_oabld"]
-[ext_resource type="Texture2D" uid="uid://komwm64ekk6e" path="res://2.png" id="2_i7s6n"]
-[ext_resource type="Texture2D" uid="uid://but6bdi2dyvw3" path="res://3.png" id="3_splo0"]
-[ext_resource type="Texture2D" uid="uid://bl328v67fr3bw" path="res://4.png" id="4_eq6nc"]
+[ext_resource type="Texture2D" uid="uid://cr3vpne4c8n1u" path="res://sprites/1.png" id="1_oabld"]
+[ext_resource type="Texture2D" uid="uid://komwm64ekk6e" path="res://sprites/2.png" id="2_i7s6n"]
+[ext_resource type="Texture2D" uid="uid://but6bdi2dyvw3" path="res://sprites/3.png" id="3_splo0"]
+[ext_resource type="Texture2D" uid="uid://bl328v67fr3bw" path="res://sprites/4.png" id="4_eq6nc"]
 
 [node name="Background" type="ParallaxBackground"]
 

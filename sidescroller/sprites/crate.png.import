@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blnujwyhoevno"
-path="res://.godot/imported/barrel.png-79e8405a33659a250c9c4bbf849c9bf7.ctex"
+uid="uid://nw8wl8xkpc2u"
+path="res://.godot/imported/crate.png-68baa5ed58181649df7a5a4d54f3a4ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://barrel.png"
-dest_files=["res://.godot/imported/barrel.png-79e8405a33659a250c9c4bbf849c9bf7.ctex"]
+source_file="res://sprites/crate.png"
+dest_files=["res://.godot/imported/crate.png-68baa5ed58181649df7a5a4d54f3a4ac.ctex"]
 
 [params]
 

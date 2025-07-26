@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://bd1dafn35gmda"]
 
-[ext_resource type="Texture2D" uid="uid://qlser4ps1gc" path="res://DinoSprites - vita.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://dekjt5ns42h2q" path="res://player.gd" id="1_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://qlser4ps1gc" path="res://sprites/DinoSprites - vita.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dekjt5ns42h2q" path="res://scripts/player.gd" id="1_i3pqv"]
 [ext_resource type="AudioStream" uid="uid://dhcgr01afw1ir" path="res://jumo_sound_effect.mp3" id="2_onrkg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
