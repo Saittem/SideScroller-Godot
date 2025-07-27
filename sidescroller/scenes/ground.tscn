@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dowekjkk526gf"]
+[gd_scene load_steps=3 format=3 uid="uid://dowekjkk526gf"]
+
+[ext_resource type="Texture2D" uid="uid://dqkkcwnmclj07" path="res://sprites/ground.png" id="1_pybca"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lv0v5"]
 size = Vector2(620, 6)
@@ -9,3 +11,8 @@ size = Vector2(620, 6)
 position = Vector2(620, 357)
 scale = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_lv0v5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(620, 357)
+scale = Vector2(38.75, 0.1875)
+texture = ExtResource("1_pybca")

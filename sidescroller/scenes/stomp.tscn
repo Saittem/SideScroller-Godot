@@ -5,7 +5,9 @@
 [node name="Stomp" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("1_8q7t4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(2, 2)
 polygon = PackedVector2Array(11, -14, -3, -1, -10, -7, -20, 14, 20, 14)
