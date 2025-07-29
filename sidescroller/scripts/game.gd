@@ -49,6 +49,10 @@ func _process(_delta):
 		show_score()
 		generate_obstacles()
 		
+		for obs in obstacles:
+			if obs.position.x <($Camera2D.postion.x - screen_size.x):
+				remove_obs(obs)
+		
 		$Player.position.x += speed
 		$Camera2D.position.x += speed
 		
@@ -61,6 +65,10 @@ func _process(_delta):
 
 func show_score():
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(int(score / SCORE_MODIFIER))
+
+func remove_obs(obs):
+	obs.remove_free()
+	obstacles.erase(obs)
 
 func generate_obstacles():
 	if obstacles.is_empty() or (last_obs.position.x + 200) < score + randi_range(300,500):
