@@ -27,16 +27,20 @@ var difficulty : int
 func _ready():
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
+	$GameOver.get_node("Button").pressed.connect(new_game)
 	new_game()
-	difficulty = 0
 
 func new_game():
+	get_tree().paused = false
+	score = 0
 	speed = 0
+	difficulty = 0
 	$Player.position = PLAYER_START_POS
 	$Player.velocity = Vector2i(0, 0)
 	$Ground.position = Vector2i(0, 0)
 	$Camera2D.position = CAM_START_POS
 	$HUD.get_node("PlayPrompt").show()
+	$GameOver.hide()
 
 func _process(_delta):
 	if game_running:
@@ -50,7 +54,7 @@ func _process(_delta):
 		generate_obstacles()
 		
 		for obs in obstacles:
-			if obs.position.x <($Camera2D.postion.x - screen_size.x):
+			if obs.position.x <($Camera2D.position.x - screen_size.x):
 				remove_obs(obs)
 		
 		$Player.position.x += speed
@@ -67,7 +71,7 @@ func show_score():
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(int(score / SCORE_MODIFIER))
 
 func remove_obs(obs):
-	obs.remove_free()
+	obs.queue_free()
 	obstacles.erase(obs)
 
 func generate_obstacles():
@@ -84,7 +88,7 @@ func generate_obstacles():
 			last_obs = obs
 			add_obs(obs, obs_x, obs_y)
 		
-		if difficulty == 0: #MAX_DIFFICULTY:
+		if difficulty == MAX_DIFFICULTY:
 			if (randi() % 2) == 0:
 				obs = bird_scene.instantiate()
 				var obs_x : int = screen_size.x + score + 100
@@ -96,7 +100,17 @@ func adjust_difficulty():
 	if difficulty > MAX_DIFFICULTY:
 		difficulty = MAX_DIFFICULTY
 
+func game_over():
+	get_tree().paused = true
+	game_running = false
+	$GameOver.show()
+
+func hit_obs(body):
+	if body.name == "Player":
+		game_over()
+
 func add_obs(obs, x, y):
 	obs.position =Vector2i(x, y)
+	obs.body_entered.connect(hit_obs)
 	add_child(obs)
 	obstacles.append(obs)
