@@ -23,6 +23,7 @@ var screen_size : Vector2i
 var ground_height : int
 var game_running : bool
 var difficulty : int
+var high_score : int
 
 func _ready():
 	screen_size = get_window().size
@@ -31,10 +32,16 @@ func _ready():
 	new_game()
 
 func new_game():
-	get_tree().paused = false
 	score = 0
+	show_score()
+	get_tree().paused = false
 	speed = 0
 	difficulty = 0
+	
+	for obs in obstacles:
+		obs.queue_free()
+	obstacles.clear()
+	
 	$Player.position = PLAYER_START_POS
 	$Player.velocity = Vector2i(0, 0)
 	$Ground.position = Vector2i(0, 0)
@@ -51,6 +58,7 @@ func _process(_delta):
 		
 		adjust_difficulty()
 		show_score()
+		show_high_score()
 		generate_obstacles()
 		
 		for obs in obstacles:
@@ -69,6 +77,11 @@ func _process(_delta):
 
 func show_score():
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(int(score / SCORE_MODIFIER))
+
+func show_high_score():
+	if (score / SCORE_MODIFIER) > high_score:
+		high_score = score / SCORE_MODIFIER
+		$HUD.get_node("HighScoreLabel").text = "HIGHSCORE: " + str(high_score)
 
 func remove_obs(obs):
 	obs.queue_free()
