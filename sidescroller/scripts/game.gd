@@ -33,7 +33,9 @@ func _ready():
 
 func new_game():
 	score = 0
-	show_score()
+	load_high_score_from_save()
+	$HUD.get_node("HighScoreLabel").text = "HIGHSCORE: " + str(high_score)
+	set_score()
 	get_tree().paused = false
 	speed = 0
 	difficulty = 0
@@ -57,8 +59,8 @@ func _process(_delta):
 		score += speed
 		
 		adjust_difficulty()
-		show_score()
-		show_high_score()
+		set_score()
+		set_high_score()
 		generate_obstacles()
 		
 		for obs in obstacles:
@@ -75,13 +77,19 @@ func _process(_delta):
 			game_running = true
 			$HUD.get_node("PlayPrompt").hide()
 
-func show_score():
+func set_score():
 	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(int(score / SCORE_MODIFIER))
 
-func show_high_score():
+func set_high_score():
 	if (score / SCORE_MODIFIER) > high_score:
 		high_score = score / SCORE_MODIFIER
+		var file = FileAccess.open("user://sidescroller_high_score.txt", FileAccess.WRITE)
+		file.store_string(str(high_score))
 		$HUD.get_node("HighScoreLabel").text = "HIGHSCORE: " + str(high_score)
+
+func load_high_score_from_save():
+	var file = FileAccess.open("user://sidescroller_high_score.txt", FileAccess.READ)
+	high_score = file.get_as_text().to_int()
 
 func remove_obs(obs):
 	obs.queue_free()
